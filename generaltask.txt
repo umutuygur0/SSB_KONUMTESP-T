@@ -1,0 +1,93 @@
+Proje Adı
+Hava Araçlarında GPS Kullanmadan Konum Tahmini
+1. Amaç
+Bu projenin amacı, hava araçlarının (HA) GPS sinyalinin bulunmadığı, kesildiği veya güvenilir
+olmadığı durumlarda konumlarının yalnızca araç üzerinde bulunan sensörlerden elde edilen
+sinyaller kullanılarak tahmin edilmesidir.
+Bu çalışmada ivmeölçer, jiroskop, manyetometre, barometre ve hava hızı gibi sensörlerden elde
+edilen sinyalleri kullanarak hava aracının konumunu tahmin eden bir yapay zekâ modeli
+geliştirmeniz beklenmektedir.
+Model eğitimi sırasında GPS konum verileri bağımlı değişken olarak (referans konum bilgisi)
+kullanılabilecek, ancak modelin tahmin aşamasında girdi olarak kullanılmamalıdır. Ayrıca model
+içerisinde GNSS/GPS’ten gelen herhangi bir veri bağımsız değişken olarak modele eklenmemelidir.
+2. Problem Tanımı
+GPS tabanlı navigasyon sistemleri, elektronik karıştırma (jamming), aldatma (spoofing), uydu
+görünürlüğünün azalması veya sistem arızaları nedeniyle güvenilirliğini kaybedebilir.
+Bu durumda hava aracının:
+• Enlem
+• Boylam
+• İrtifa
+bilgilerinin yalnızca diğer sensör verileri kullanılarak tahmin edilmesi önem arz etmektedir.
+Geliştirilecek modelin amacı, GPS kaybı yaşanan senaryolarda hava aracının konumunu mümkün
+olan en düşük hata ile kestirebilmektir. Bu sebeple GNSS/GPS kaynaklı veriler modelde girdi olarak
+kullanılmamalıdır.
+3. Kullanılabilecek Veri Setleri
+Bu çalışma kapsamında projenin kapsamıyla ilişkili olacak şekilde herhangi bir halka açık veri seti
+kullanılabilir. Aşağıda iki adet veri seti örnek olarak verilmiştir. Bu veri setleri de kullanılabilir.
+• https://www.kaggle.com/datasets/ziya07/uav-coordination-dataset
+• https://doi.org/10.5281/zenodo.16992975
+Kullanılan veri setlerinin kaynakları ve açıklamaları raporda belirtilmelidir.
+4. Teknik Gereksinimler
+Minimum Yapılması Gerekenler
+1. Veri ön işleme adımları uygulanmalıdır.
+2. Eksik veri yönetimi yapılmalıdır.
+3. Eğitim, doğrulama ve test veri kümeleri ayrılmalıdır.
+4. Bir derin öğrenme modeli inşa edilmelidir.
+5. Tahmin sırasında GNSS/GPS ilişkili hiçbir veri modele girdi olarak verilmemelidir.
+6. Eğitim süresince hesaplanan eğitim ve test kayıp fonksiyonu değerleri değerlendirilmelidir.
+7. Modelin performansı nicel metriklerle değerlendirilmelidir.
+Bu adımları uygularken herhangi bir yöntem kısıtı yoktur.
+5. Beklenen Çıktılar
+Model aşağıdaki verileri tahmin etmelidir:
+• Enlem (°)
+• Boylam (°)
+• İrtifa (m)
+Aşağıdaki grafiklerin rapor edilmesi beklenmektedir.
+• Eğitim ve test veri setlerinin kayıp değerleri grafikleri
+• Gerçek ve tahmin edilen rota karşılaştırması (Enlem-Boylam olarak 2B veya İrtifa da
+eklenerek 3B olarak yapılabilir)
+• Zaman bazlı konum hatası grafiği
+• GPS kesintisi senaryolarındaki performans
+6. GPS Kesintisi Senaryosu
+Model aşağıdaki senaryoda test edilmelidir:
+1. Uçuşun belirli bir bölümünde GPS verisi mevcut kabul edilir.
+2. Daha sonra GPS sinyali tamamen kesilir.
+3. Model yalnızca diğer sensör verileriyle konum tahmini yapmaya devam eder. Başlangıç
+noktası olarak GPS’ten alınan son konum bilgisi kullanılabilir.
+4. Tahmin edilen rota gerçek GPS rotası ile karşılaştırılır.
+7. Teslim Edilecek Çalışmalar
+Aşağıdaki çıktılar teslim edecektir:
+Teknik Rapor
+Raporda aşağıdaki bölümler bulunmalıdır:
+• Problem tanımı
+• Kullanılan veri setleri
+• Veri ön işleme çalışmaları
+• Model mimarisi
+• Eğitim süreci
+• Deneyler (GPS kesinti senaryoları)
+• Sonuçlar
+• Karşılaşılan problemler
+• İleriye Dönük Yapılabilecek Geliştirmeler
+Kodlar
+• Çalıştırılabilir kaynak kod
+• Gerekli kütüphane listesi
+• Kurulum ve kullanım açıklamaları
+Sunum
+10–15 dakikalık proje sunumu hazırlanmalıdır.
+8. Değerlendirme Kriterleri
+Kriter Ağırlık
+Veri analizi ve ön işleme %15
+Model tasarımı %30
+Tahmin başarısı %10
+Deneysel çalışma ve analiz %25
+Rapor içeriği %10
+Sunum içeriği %10
+9. Bonus Çalışmalar
+Aşağıdaki çalışmalar ek puan sağlayacaktır:
+• Gerçek zamanlı çalışan sistem geliştirilmesi
+• Birden fazla modelin karşılaştırılması
+Teslim edilecek çalışmalar en son 19 Temmuz 2026 Pazar günü 23:59’a kadar muratisbilen41@gmail.com
+e-posta adresine gönderilmiş olmalıdır. Bu tarihten sonra gönderilecek çalışmalar değerlendirmeye
+alınmayacaktır.
+Proje ile ilgili sorularınızı ve görüşlerinizi de muratisbilen41@gmail.com e-posta adresine gönderebilirsiniz.
+İyi çalışmalar, başarılar.

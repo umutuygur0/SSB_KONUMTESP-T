@@ -1,0 +1,30 @@
+{
+  "total_columns": 3003,
+  "found_inputs": [
+    "delta_angle[0]_f124",
+    "delta_angle[1]_f124",
+    "delta_angle[2]_f124",
+    "delta_angle_dt_f124",
+    "delta_velocity[0]_f124",
+    "delta_velocity[1]_f124",
+    "delta_velocity[2]_f124",
+    "delta_velocity_dt_f124",
+    "mag_field[0]_f49",
+    "mag_field[1]_f49",
+    "mag_field[2]_f49",
+    "indicated_airspeed_m_s_f5",
+    "baro_alt_meter_f117",
+    "differential_pressure_pa_f15"
+  ],
+  "missing_inputs": [],
+  "found_targets": [
+    "x_f58",
+    "y_f58",
+    "z_f58",
+    "ref_lat_f58",
+    "ref_lon_f58",
+    "ref_alt_f58"
+  ],
+  "gps_leakage_count": 177,
+  "unique_f_indices": 141
+}

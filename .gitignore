@@ -1,0 +1,46 @@
+# ─── Büyük ham veri klasörleri (GB ölçeğinde, push edilmez) ───
+Holybro Pixhawk Dataset/
+Speedybee DataSet/
+kaggle UAV Coordination Dataset/
+
+# ─── Python ───
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+*.so
+.env
+.venv
+env/
+venv/
+
+# ─── Jupyter ───
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ─── OS ───
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── IDE ───
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# ─── Model ağırlıkları (büyükse Phase2'de ekleriz) ───
+Phase2_Model/*.pt
+Phase2_Model/*.h5
+Phase2_Model/*.keras
+Phase2_Model/checkpoints/
+
+# ─── Geçici dosyalar ───
+*.log
+*.tmp
+*.bak

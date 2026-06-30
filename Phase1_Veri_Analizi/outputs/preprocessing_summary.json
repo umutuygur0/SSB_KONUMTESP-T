@@ -1,0 +1,27 @@
+{
+  "actual_hz": 2.0,
+  "sequence_length": 40,
+  "sequence_seconds": 20.0,
+  "step_size": 4,
+  "n_features": 12,
+  "input_cols": [
+    "delta_angle[0]_f124",
+    "delta_angle[1]_f124",
+    "delta_angle[2]_f124",
+    "delta_velocity[0]_f124",
+    "delta_velocity[1]_f124",
+    "delta_velocity[2]_f124",
+    "mag_field[0]_f49",
+    "mag_field[1]_f49",
+    "mag_field[2]_f49",
+    "indicated_airspeed_m_s_f5",
+    "baro_alt_meter_f117",
+    "differential_pressure_pa_f15"
+  ],
+  "flights_processed": 111,
+  "split_sizes": {
+    "train": 9274,
+    "val": 1843,
+    "test": 2008
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "total_files": 120,
+  "valid_flights": 111,
+  "rejected_flights": 9,
+  "error_flights": 0,
+  "split": {
+    "train": 77,
+    "val": 16,
+    "test": 18
+  },
+  "rejected_list": [
+    "vuelo_113_sync.csv",
+    "vuelo_117_sync.csv",
+    "vuelo_118_sync.csv",
+    "vuelo_119_sync.csv",
+    "vuelo_120_sync.csv",
+    "vuelo_16_sync.csv",
+    "vuelo_7_sync.csv",
+    "vuelo_8_sync.csv",
+    "vuelo_9_sync.csv"
+  ],
+  "avg_duration_s": 258.609009009009,
+  "avg_hz": 1.9749549549549548
+}

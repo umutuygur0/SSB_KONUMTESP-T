@@ -1,0 +1,142 @@
+f_index,col_count,sensor_types,has_leakage,sample_cols
+f0,7,{'unknown': 7},False,armed_f0|prearmed_f0|ready_to_arm_f0
+f1,14,"{'control_output': 12, 'unknown': 2}",False,timestamp_sample_f1|control[0]_f1|control[1]_f1
+f10,4,{'unknown': 4},False,io_errors_f10|frames_tx_f10|frames_rx_f10
+f100,11,"{'unknown': 7, 'ned_position': 3, 'temperature': 1}",True,timestamp_sample_f100|device_id_f100|x_f100
+f101,11,"{'unknown': 7, 'ned_position': 3, 'temperature': 1}",True,timestamp_sample_f101|device_id_f101|x_f101
+f102,5,"{'unknown': 4, 'temperature': 1}",False,timestamp_sample_f102|device_id_f102|pressure_f102
+f103,5,"{'unknown': 4, 'temperature': 1}",False,timestamp_sample_f103|device_id_f103|pressure_f103
+f104,13,{'unknown': 13},False,gyro_rad[0]_f104|gyro_rad[1]_f104|gyro_rad[2]_f104
+f105,34,{'unknown': 34},False,timestamp_sample_f105|latitude_deg_f105|longitude_deg_f105
+f106,11,"{'unknown': 7, 'ned_position': 3, 'temperature': 1}",True,timestamp_sample_f106|device_id_f106|x_f106
+f107,11,"{'unknown': 7, 'ned_position': 3, 'temperature': 1}",True,timestamp_sample_f107|device_id_f107|x_f107
+f108,11,"{'unknown': 7, 'ned_position': 3, 'temperature': 1}",True,timestamp_sample_f108|device_id_f108|x_f108
+f109,7,"{'unknown': 3, 'ned_position': 3, 'temperature': 1}",True,timestamp_sample_f109|device_id_f109|x_f109
+f11,4,{'unknown': 4},False,io_errors_f11|frames_tx_f11|frames_rx_f11
+f110,7,"{'unknown': 3, 'ned_position': 3, 'temperature': 1}",True,timestamp_sample_f110|device_id_f110|x_f110
+f111,1,{'unknown': 1},False,normalized_setpoint_f111
+f112,16,"{'unknown': 14, 'battery': 2}",False,voltage5v_v_f112|voltage_payload_v_f112|sensors3v3[0]_f112
+f113,24,"{'unknown': 19, 'airspeed': 5}",False,altitude_sp_f113|altitude_reference_f113|altitude_time_constant_f113
+f114,37,{'unknown': 37},False,data_rate_f114|rate_multiplier_f114|tx_rate_avg_f114
+f115,37,{'unknown': 37},False,data_rate_f115|rate_multiplier_f115|tx_rate_avg_f115
+f116,4,{'unknown': 4},False,timestamp_sample_f116|xyz[0]_f116|xyz[1]_f116
+f117,8,"{'unknown': 6, 'baro_alt': 1, 'temperature': 1}",False,timestamp_sample_f117|baro_device_id_f117|baro_alt_meter_f117
+f118,7,{'unknown': 7},False,timestamp_sample_f118|xyz[0]_f118|xyz[1]_f118
+f119,10,"{'unknown': 6, 'quaternion': 4}",False,timestamp_sample_f119|q[0]_f119|q[1]_f119
+f12,5,{'unknown': 5},False,defer_failsafes_timeout_s_f12|disable_auto_disarm_f12|defer_failsafes_f12
+f120,8,{'unknown': 8},False,yaw_sp_move_rate_f120|q_d[0]_f120|q_d[1]_f120
+f121,15,{'unknown': 15},False,flag_armed_f121|flag_multicopter_position_control_enabled_f121|flag_control_manual_enabled_f121
+f122,17,"{'unknown': 14, 'gps_lat_lon': 2, 'gps_alt': 1}",True,timestamp_sample_f122|lat_f122|lon_f122
+f123,34,{'unknown': 34},False,timestamp_sample_f123|latitude_deg_f123|longitude_deg_f123
+f124,15,"{'unknown': 7, 'delta_angle': 3, 'delta_velocity': 3, 'delta_dt': 2}",False,timestamp_sample_f124|accel_device_id_f124|gyro_device_id_f124
+f125,15,"{'unknown': 7, 'delta_angle': 3, 'delta_velocity': 3, 'delta_dt': 2}",False,timestamp_sample_f125|accel_device_id_f125|gyro_device_id_f125
+f126,15,"{'unknown': 7, 'delta_angle': 3, 'delta_velocity': 3, 'delta_dt': 2}",False,timestamp_sample_f126|accel_device_id_f126|gyro_device_id_f126
+f127,31,"{'unknown': 29, 'temperature': 2}",False,accel_device_id_f127|gyro_device_id_f127|accel_clipping[0]_f127
+f128,31,"{'unknown': 29, 'temperature': 2}",False,accel_device_id_f128|gyro_device_id_f128|accel_clipping[0]_f128
+f129,31,"{'unknown': 29, 'temperature': 2}",False,accel_device_id_f129|gyro_device_id_f129|accel_clipping[0]_f129
+f13,25,{'unknown': 25},False,unallocated_torque[0]_f13|unallocated_torque[1]_f13|unallocated_torque[2]_f13
+f130,12,{'unknown': 12},False,freefall_f130|ground_contact_f130|maybe_landed_f130
+f131,54,"{'unknown': 42, 'ref_position': 3, 'ned_position': 3, 'ned_velocity': 3, 'ned_accel': 3}",True,timestamp_sample_f131|ref_timestamp_f131|ref_lat_f131
+f132,14,"{'unknown': 8, 'ned_position': 3, 'ned_velocity': 3}",True,x_f132|y_f132|z_f132
+f133,6,{'unknown': 6},False,timestamp_sample_f133|device_id_f133|magnetometer_ga[0]_f133
+f134,7,{'unknown': 7},False,roll_f134|pitch_f134|yaw_f134
+f135,38,{'unknown': 38},False,armed_time_f135|takeoff_time_f135|nav_state_timestamp_f135
+f136,4,{'unknown': 4},False,timestamp_sample_f136|xyz[0]_f136|xyz[1]_f136
+f137,4,{'unknown': 4},False,timestamp_sample_f137|xyz[0]_f137|xyz[1]_f137
+f138,24,{'unknown': 24},False,timestamp_sample_f138|yaw_composite_f138|yaw_variance_f138
+f139,24,{'unknown': 24},False,timestamp_sample_f139|yaw_composite_f139|yaw_variance_f139
+f14,2,{'unknown': 2},False,load_f14|ram_usage_f14
+f140,24,{'unknown': 24},False,timestamp_sample_f140|yaw_composite_f140|yaw_variance_f140
+f15,5,"{'unknown': 3, 'diff_pressure': 1, 'temperature': 1}",False,timestamp_sample_f15|device_id_f15|differential_pressure_pa_f15
+f16,13,{'unknown': 13},False,timestamp_sample_f16|time_last_fuse_f16|device_id_f16
+f17,13,{'unknown': 13},False,timestamp_sample_f17|time_last_fuse_f17|device_id_f17
+f18,13,{'unknown': 13},False,timestamp_sample_f18|time_last_fuse_f18|device_id_f18
+f19,13,{'unknown': 13},False,timestamp_sample_f19|time_last_fuse_f19|device_id_f19
+f2,17,"{'control_output': 16, 'actuator': 1}",False,noutputs_f2|output[0]_f2|output[1]_f2
+f20,13,{'unknown': 13},False,timestamp_sample_f20|time_last_fuse_f20|device_id_f20
+f21,13,{'unknown': 13},False,timestamp_sample_f21|time_last_fuse_f21|device_id_f21
+f22,20,{'unknown': 20},False,timestamp_sample_f22|time_last_fuse_f22|observation[0]_f22
+f23,20,{'unknown': 20},False,timestamp_sample_f23|time_last_fuse_f23|observation[0]_f23
+f24,20,{'unknown': 20},False,timestamp_sample_f24|time_last_fuse_f24|observation[0]_f24
+f25,27,{'unknown': 27},False,timestamp_sample_f25|time_last_fuse_f25|device_id_f25
+f26,27,{'unknown': 27},False,timestamp_sample_f26|time_last_fuse_f26|device_id_f26
+f27,27,{'unknown': 27},False,timestamp_sample_f27|time_last_fuse_f27|device_id_f27
+f28,27,{'unknown': 27},False,timestamp_sample_f28|time_last_fuse_f28|device_id_f28
+f29,27,{'unknown': 27},False,timestamp_sample_f29|time_last_fuse_f29|device_id_f29
+f3,17,"{'control_output': 16, 'actuator': 1}",False,noutputs_f3|output[0]_f3|output[1]_f3
+f30,27,{'unknown': 27},False,timestamp_sample_f30|time_last_fuse_f30|device_id_f30
+f31,27,{'unknown': 27},False,timestamp_sample_f31|time_last_fuse_f31|device_id_f31
+f32,27,{'unknown': 27},False,timestamp_sample_f32|time_last_fuse_f32|device_id_f32
+f33,27,{'unknown': 27},False,timestamp_sample_f33|time_last_fuse_f33|device_id_f33
+f34,10,"{'unknown': 6, 'quaternion': 4}",False,timestamp_sample_f34|q[0]_f34|q[1]_f34
+f35,10,"{'unknown': 6, 'quaternion': 4}",False,timestamp_sample_f35|q[0]_f35|q[1]_f35
+f36,10,"{'unknown': 6, 'quaternion': 4}",False,timestamp_sample_f36|q[0]_f36|q[1]_f36
+f37,7,{'unknown': 7},False,timestamp_sample_f37|device_id_f37|bias_f37
+f38,7,{'unknown': 7},False,timestamp_sample_f38|device_id_f38|bias_f38
+f39,7,{'unknown': 7},False,timestamp_sample_f39|device_id_f39|bias_f39
+f4,9,"{'control_output': 8, 'unknown': 1}",False,timestamp_sample_f4|control[0]_f4|control[1]_f4
+f40,19,{'unknown': 19},True,timestamp_sample_f40|information_event_changes_f40|gps_checks_passed_f40
+f41,19,{'unknown': 19},True,timestamp_sample_f41|information_event_changes_f41|gps_checks_passed_f41
+f42,19,{'unknown': 19},True,timestamp_sample_f42|information_event_changes_f42|gps_checks_passed_f42
+f43,17,"{'unknown': 14, 'gps_lat_lon': 2, 'gps_alt': 1}",True,timestamp_sample_f43|lat_f43|lon_f43
+f44,17,"{'unknown': 14, 'gps_lat_lon': 2, 'gps_alt': 1}",True,timestamp_sample_f44|lat_f44|lon_f44
+f45,17,"{'unknown': 14, 'gps_lat_lon': 2, 'gps_alt': 1}",True,timestamp_sample_f45|lat_f45|lon_f45
+f46,16,{'unknown': 16},False,timestamp_sample_f46|position_drift_rate_horizontal_m_s_f46|position_drift_rate_vertical_m_s_f46
+f47,16,{'unknown': 16},False,timestamp_sample_f47|position_drift_rate_horizontal_m_s_f47|position_drift_rate_vertical_m_s_f47
+f48,16,{'unknown': 16},False,timestamp_sample_f48|position_drift_rate_horizontal_m_s_f48|position_drift_rate_vertical_m_s_f48
+f49,32,"{'unknown': 28, 'mag_field': 3, 'baro_vpos': 1}",True,timestamp_sample_f49|gps_hvel[0]_f49|gps_hvel[1]_f49
+f5,4,"{'unknown': 2, 'airspeed': 2}",False,timestamp_sample_f5|indicated_airspeed_m_s_f5|true_airspeed_m_s_f5
+f50,32,"{'unknown': 28, 'mag_field': 3, 'baro_vpos': 1}",True,timestamp_sample_f50|gps_hvel[0]_f50|gps_hvel[1]_f50
+f51,32,"{'unknown': 28, 'mag_field': 3, 'baro_vpos': 1}",True,timestamp_sample_f51|gps_hvel[0]_f51|gps_hvel[1]_f51
+f52,32,"{'unknown': 28, 'mag_field': 3, 'baro_vpos': 1}",True,timestamp_sample_f52|gps_hvel[0]_f52|gps_hvel[1]_f52
+f53,32,"{'unknown': 28, 'mag_field': 3, 'baro_vpos': 1}",True,timestamp_sample_f53|gps_hvel[0]_f53|gps_hvel[1]_f53
+f54,32,"{'unknown': 28, 'mag_field': 3, 'baro_vpos': 1}",True,timestamp_sample_f54|gps_hvel[0]_f54|gps_hvel[1]_f54
+f55,32,"{'unknown': 28, 'mag_field': 3, 'baro_vpos': 1}",True,timestamp_sample_f55|gps_hvel[0]_f55|gps_hvel[1]_f55
+f56,32,"{'unknown': 28, 'mag_field': 3, 'baro_vpos': 1}",True,timestamp_sample_f56|gps_hvel[0]_f56|gps_hvel[1]_f56
+f57,32,"{'unknown': 28, 'mag_field': 3, 'baro_vpos': 1}",True,timestamp_sample_f57|gps_hvel[0]_f57|gps_hvel[1]_f57
+f58,54,"{'unknown': 42, 'ref_position': 3, 'ned_position': 3, 'ned_velocity': 3, 'ned_accel': 3}",True,timestamp_sample_f58|ref_timestamp_f58|ref_lat_f58
+f59,54,"{'unknown': 42, 'ref_position': 3, 'ned_position': 3, 'ned_velocity': 3, 'ned_accel': 3}",True,timestamp_sample_f59|ref_timestamp_f59|ref_lat_f59
+f6,9,"{'unknown': 6, 'airspeed': 3}",False,indicated_airspeed_m_s_f6|calibrated_airspeed_m_s_f6|true_airspeed_m_s_f6
+f60,54,"{'unknown': 42, 'ref_position': 3, 'ned_position': 3, 'ned_velocity': 3, 'ned_accel': 3}",True,timestamp_sample_f60|ref_timestamp_f60|ref_lat_f60
+f61,27,"{'unknown': 20, 'quaternion': 4, 'angular_velocity': 3}",False,timestamp_sample_f61|position[0]_f61|position[1]_f61
+f62,27,"{'unknown': 20, 'quaternion': 4, 'angular_velocity': 3}",False,timestamp_sample_f62|position[0]_f62|position[1]_f62
+f63,27,"{'unknown': 20, 'quaternion': 4, 'angular_velocity': 3}",False,timestamp_sample_f63|position[0]_f63|position[1]_f63
+f64,45,{'unknown': 45},False,last_instance_change_f64|instance_changed_count_f64|accel_device_id_f64
+f65,31,{'unknown': 31},False,timestamp_sample_f65|gyro_device_id_f65|gyro_bias[0]_f65
+f66,31,{'unknown': 31},False,timestamp_sample_f66|gyro_device_id_f66|gyro_bias[0]_f66
+f67,31,{'unknown': 31},False,timestamp_sample_f67|gyro_device_id_f67|gyro_bias[0]_f67
+f68,51,{'unknown': 51},False,timestamp_sample_f68|states[0]_f68|states[1]_f68
+f69,51,{'unknown': 51},False,timestamp_sample_f69|states[0]_f69|states[1]_f69
+f7,13,"{'unknown': 11, 'wind': 2}",True,timestamp_sample_f7|windspeed_north_f7|windspeed_east_f7
+f70,51,{'unknown': 51},False,timestamp_sample_f70|states[0]_f70|states[1]_f70
+f71,39,{'unknown': 39},True,timestamp_sample_f71|control_mode_flags_f71|output_tracking_error[0]_f71
+f72,39,{'unknown': 39},True,timestamp_sample_f72|control_mode_flags_f72|output_tracking_error[0]_f72
+f73,39,{'unknown': 39},True,timestamp_sample_f73|control_mode_flags_f73|output_tracking_error[0]_f73
+f74,70,{'unknown': 70},False,timestamp_sample_f74|control_status_changes_f74|fault_status_changes_f74
+f75,70,{'unknown': 70},False,timestamp_sample_f75|control_status_changes_f75|fault_status_changes_f75
+f76,70,{'unknown': 70},False,timestamp_sample_f76|control_status_changes_f76|fault_status_changes_f76
+f77,41,{'unknown': 41},False,mode_req_angular_velocity_f77|mode_req_attitude_f77|mode_req_local_alt_f77
+f78,10,{'unknown': 10},False,imbalanced_prop_metric_f78|motor_failure_mask_f78|fd_roll_f78
+f79,8,{'unknown': 8},False,course_setpoint_f79|lateral_acceleration_ff_f79|bearing_feas_f79
+f8,13,"{'unknown': 11, 'wind': 2}",True,timestamp_sample_f8|windspeed_north_f8|windspeed_east_f8
+f80,3,{'unknown': 3},False,course_f80|airspeed_direction_f80|lateral_acceleration_f80
+f81,2,{'unknown': 2},False,lateral_acceleration_setpoint_f81|can_run_factor_f81
+f82,5,{'unknown': 5},False,altitude_f82|height_rate_f82|equivalent_airspeed_f82
+f83,1,{'unknown': 1},False,normalized_setpoint_f83
+f84,29,{'unknown': 29},False,timestamp_last_signal_f84|rssi_f84|rssi_dbm_f84
+f85,1,{'unknown': 1},False,normalized_wheel_setpoint_f85
+f86,1,{'unknown': 1},False,lateral_accel_max_f86
+f87,9,{'unknown': 9},False,pitch_min_f87|pitch_max_f87|throttle_min_f87
+f88,16,{'unknown': 16},False,timestamp_sample_f88|roll_f88|pitch_f88
+f89,14,{'unknown': 14},False,timestamp_sample_f89|switch_changes_f89|mode_slot_f89
+f9,51,"{'unknown': 30, 'battery': 20, 'temperature': 1}",False,voltage_v_f9|current_a_f9|current_average_a_f9
+f90,14,{'unknown': 14},False,mission_id_f90|geofence_id_f90|home_position_counter_f90
+f91,16,{'unknown': 16},False,latitude_f91|longitude_f91|time_inside_f91
+f92,2,{'unknown': 2},False,nav_state_f92|failure_f92
+f93,69,"{'unknown': 46, 'battery': 23}",False,previous.timestamp_f93|previous.lat_f93|previous.lon_f93
+f94,76,"{'unknown': 75, 'battery': 1}",False,voltage_v_f94|rssi_v_f94|free_memory_bytes_f94
+f95,3,{'unknown': 3},False,rollspeed_integ_f95|pitchspeed_integ_f95|yawspeed_integ_f95
+f96,5,{'unknown': 5},False,safe_points_id_f96|is_evaluation_pending_f96|has_vtol_approach_f96
+f97,3,{'unknown': 3},False,time_estimate_f97|safe_time_estimate_f97|valid_f97
+f98,34,{'unknown': 34},False,accel_device_id_primary_f98|accel_device_ids[0]_f98|accel_device_ids[1]_f98
+f99,11,"{'unknown': 7, 'ned_position': 3, 'temperature': 1}",True,timestamp_sample_f99|device_id_f99|x_f99
