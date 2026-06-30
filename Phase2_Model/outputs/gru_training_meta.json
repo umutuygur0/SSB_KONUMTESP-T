@@ -1,0 +1,18 @@
+{
+  "model": "GRU",
+  "best_val_loss": 0.1788628250360489,
+  "best_epoch": 70,
+  "total_epochs": 85,
+  "training_time_s": 12.9,
+  "n_params": 153987,
+  "device": "cuda",
+  "hyperparams": {
+    "hidden_size": 128,
+    "num_layers": 2,
+    "dropout": 0.2,
+    "batch_size": 256,
+    "lr_init": 0.001,
+    "huber_delta": 1.0,
+    "patience_es": 15
+  }
+}
