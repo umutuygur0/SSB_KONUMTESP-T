@@ -1,6 +1,6 @@
 # Phase 1 — Veri Analizi ve Ön İşleme Raporu
 
-**Üretim tarihi:** 2026-06-30 11:50
+**Üretim tarihi:** 2026-06-30 (kurtarma sonrası güncellendi)
 
 ---
 
@@ -9,8 +9,8 @@
 | Parametre | Değer |
 |---|---|
 | Toplam CSV dosyası | 120 |
-| Geçerli uçuş | 111 |
-| Reddedilen | 9 |
+| Geçerli uçuş | 118 (111 normal + 7 kurtarılan) |
+| Kurtarılamaz | 2 (vuelo_16: 14 satır, vuelo_113: 3 satır) |
 | Toplam sütun (Holybro) | 3003 |
 | Benzersiz f-indeks grubu | 141 |
 | GPS leakage riski taşıyan sütun | 177 |
@@ -54,21 +54,21 @@ differential_pressure_pa_f15
 
 | Parametre | Değer |
 |---|---|
-| Hedef frekans | ? Hz |
-| Pencere uzunluğu | 40 adım |
-| Adım boyutu | 4 adım |
+| Örnekleme hızı | ~2 Hz (senkronize) |
+| Pencere uzunluğu | 40 adım (20 saniye) |
+| Adım boyutu | 4 adım (2 saniye) |
 | Feature sayısı | 12 |
-| İşlenen uçuş | 111 |
+| İşlenen uçuş | 118 |
 
 ## 5. Eğitim / Doğrulama / Test Bölümü
 
 | Küme | Örnek Sayısı | Oran |
 |---|---|---|
-| Train | 9,274 | %70.7 |
-| Val | 1,843 | %14.0 |
-| Test | 2,008 | %15.3 |
+| Train | 9,677 | %70.6 |
+| Val | 1,843 | %13.4 |
+| Test | 2,470 | %18.0 |
 
-Uçuş bazlı split: Train=77 | Val=16 | Test=18
+Uçuş bazlı split: Train=80 | Val=16 | Test=22
 
 ## 6. Uçuş Süresi İstatistikleri
 
@@ -113,11 +113,12 @@ Uçuş bazlı split: Train=77 | Val=16 | Test=18
 
 Toplam çıktı dosyası: 118
 ```
-X_test.npy: shape=(2008, 40, 12)
-X_train.npy: shape=(9274, 40, 12)
-X_val.npy: shape=(1843, 40, 12)
-y_test.npy: shape=(2008, 3)
-y_train.npy: shape=(9274, 3)
-y_val.npy: shape=(1843, 3)
-scaler.pkl: StandardScaler (eğitim setinden fit)
+X_train.npy : shape=(9677, 40, 12)   — 80 uçuş
+X_val.npy   : shape=(1843, 40, 12)   — 16 uçuş
+X_test.npy  : shape=(2470, 40, 12)   — 22 uçuş
+y_train.npy : shape=(9677, 3)
+y_val.npy   : shape=(1843, 3)
+y_test.npy  : shape=(2470, 3)
+scaler.pkl  : StandardScaler, 80 uçuş ham veriden fit (mean≈0, std≈1)
+118 × flight_*.npz : ham + ölçekli veri, per-uçuş
 ```
