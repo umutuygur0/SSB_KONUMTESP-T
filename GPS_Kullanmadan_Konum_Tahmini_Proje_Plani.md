@@ -251,10 +251,10 @@ Enlem-boylam hatasını derece değil **metre** cinsinden raporla.
 
 | Aşama | İçerik | Durum |
 |---|---|---|
-| Phase 1 | Veri analizi, ön işleme, kalite filtresi, split | 🔄 Devam ediyor |
-| Phase 2 | Dead reckoning baseline + GRU/LSTM eğitimi | Bekliyor |
-| Phase 3 | GPS kesintisi deneyleri | Bekliyor |
-| Phase 4 | Metrikler, grafikler, teknik rapor, README | Bekliyor |
+| Phase 1 | Veri analizi, ön işleme, kalite filtresi, split | ✅ Tamamlandı |
+| Phase 2 | Dead reckoning baseline + GRU/LSTM eğitimi | ✅ Tamamlandı |
+| Phase 3 | GPS kesintisi deneyleri (tam trajektori, 3×4 matris) | ✅ Tamamlandı |
+| Phase 4 | Metrikler, grafikler, teknik rapor, README | 🔄 Devam ediyor |
 | Phase 5 | Sunum + kod paketi + test + teslim | Bekliyor |
 
 ---

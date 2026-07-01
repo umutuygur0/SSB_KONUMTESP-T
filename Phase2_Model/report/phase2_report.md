@@ -23,9 +23,9 @@ etmek amacıyla eğitilen **GRU** ve **LSTM** modellerinin sonuçlarını içerm
 ## 2. Veri & Girdi/Çıktı Tanımı
 
 ### 2.1 Ham Veri
-- **Kaynak:** PX4 Autopilot log dosyaları (kaggle UAV Coordination Dataset)
-- **Örnekleme hızı:** ~2 Hz (senkronize)
-- **Toplam uçuş:** 118 (80 train / 19 val / 19 test)
+- **Kaynak:** Holybro Pixhawk — PX4 Autopilot uLog kayıtları (120 CSV, gruplu senkronize format)
+- **Örnekleme hızı:** ~2 Hz (zaten senkronize, resample yapılmadı)
+- **Toplam uçuş:** 118 geçerli (80 train / 16 val / 22 test)
 
 ### 2.2 Girdi Özellikleri (12 feature)
 
@@ -52,9 +52,9 @@ etmek amacıyla eğitilen **GRU** ve **LSTM** modellerinin sonuçlarını içerm
 |-----------|-------|
 | Pencere uzunluğu | 40 adım = 20 saniye |
 | Adım büyüklüğü | 4 adım = 2 saniye |
-| Train örnekleri | 2470 → **9 677** |
-| Val örnekleri | **1 843** |
-| Test örnekleri | **2 470** |
+| Train örnekleri | **9 677** (80 uçuş) |
+| Val örnekleri | **1 843** (16 uçuş) |
+| Test örnekleri | **2 470** (22 uçuş) |
 
 ---
 

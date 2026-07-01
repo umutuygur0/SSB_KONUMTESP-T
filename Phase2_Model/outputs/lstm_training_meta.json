@@ -1,9 +1,9 @@
 {
   "model": "LSTM",
-  "best_val_loss": 0.1679543126374483,
-  "best_epoch": 51,
-  "total_epochs": 66,
-  "training_time_s": 12.4,
+  "best_val_loss": 0.1852167770266533,
+  "best_epoch": 63,
+  "total_epochs": 78,
+  "training_time_s": 27.5,
   "n_params": 205187,
   "device": "cuda",
   "hyperparams": {
