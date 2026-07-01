@@ -35,10 +35,7 @@ desktop.ini
 *.swo
 
 # ─── Model ağırlıkları (büyükse Phase2'de ekleriz) ───
-Phase2_Model/*.pt
-Phase2_Model/*.h5
-Phase2_Model/*.keras
-Phase2_Model/checkpoints/
+
 
 # ─── Geçici dosyalar ───
 *.log
