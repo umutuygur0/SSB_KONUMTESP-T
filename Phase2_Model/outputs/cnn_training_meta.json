@@ -1,0 +1,22 @@
+{
+  "model": "CNN",
+  "best_val_loss": 0.6111660227179527,
+  "best_epoch": 83,
+  "total_epochs": 98,
+  "training_time_s": 16.8,
+  "n_params": 76739,
+  "device": "cuda",
+  "hyperparams": {
+    "hidden_size": 128,
+    "dilations": [
+      1,
+      2,
+      4
+    ],
+    "kernel_size": 3,
+    "batch_size": 256,
+    "lr_init": 0.001,
+    "huber_delta": 1.0,
+    "patience_es": 15
+  }
+}

@@ -99,6 +99,8 @@ Uçuşun herhangi bir anında GPS kesildiğinde:
 
 5. **Ensemble değeri:** Ensemble, p95 hatasını tek model ortalamasına göre düşürür ama GRU'yu ortalama HPE'de her zaman geçemez. Gerçek zamanlı kullanım için GRU önerilir.
 
+6. **DR anomalisi — 30s > 60s (%20 başlangıcı):** Dead Reckoning, %20 başlangıcında 30s için 437.7m, 60s için 217.1m göstermektedir. Bu, 60s daha iyi gibi görünse de aslında uçuşların ortalama net yer değiştirmesini ölçmektedir. Bazı uçuşlar ilk 30s'de hızlıca uzaklaşıp sonraki 30s'de geri döndüğünden kümülatif net hata 60s'de daha düşük çıkabilir. Makine öğrenmesi modelleri (GRU, LSTM) bu tür anomaline karşı daha dayanıklıdır — her iki durumda da DR'dan belirgin biçimde iyidir.
+
 ### 4.3 Phase 2 ile Tutarlılık Kontrolü
 
 Phase 2'deki GPS kesintisi sonuçları farklı metodoloji (per-window değerlendirme) kullanmaktaydı. Karşılaştırma:

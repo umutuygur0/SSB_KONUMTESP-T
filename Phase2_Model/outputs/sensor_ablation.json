@@ -1,0 +1,63 @@
+[
+  {
+    "scenario": "Tam Model (Baseline)",
+    "zero_cols": null,
+    "HPE_mean": 4.125,
+    "HPE_median": 1.55,
+    "HPE_p95": 15.32,
+    "delta_vs_baseline": 0.0,
+    "pct_increase": 0.0
+  },
+  {
+    "scenario": "Mag. yok (cols 6-8)",
+    "zero_cols": [
+      6,
+      7,
+      8
+    ],
+    "HPE_mean": 5.413,
+    "HPE_median": 2.757,
+    "HPE_p95": 16.04,
+    "delta_vs_baseline": 1.288,
+    "pct_increase": 31.2
+  },
+  {
+    "scenario": "Baro yok (col 10)",
+    "zero_cols": [
+      10
+    ],
+    "HPE_mean": 5.21,
+    "HPE_median": 2.137,
+    "HPE_p95": 16.102,
+    "delta_vs_baseline": 1.085,
+    "pct_increase": 26.3
+  },
+  {
+    "scenario": "Airspeed yok (cols 9,11)",
+    "zero_cols": [
+      9,
+      11
+    ],
+    "HPE_mean": 4.329,
+    "HPE_median": 1.717,
+    "HPE_p95": 15.403,
+    "delta_vs_baseline": 0.204,
+    "pct_increase": 4.9
+  },
+  {
+    "scenario": "Sadece IMU (cols 0-5)",
+    "zero_cols": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "HPE_mean": 7.593,
+    "HPE_median": 6.525,
+    "HPE_p95": 16.535,
+    "delta_vs_baseline": 3.468,
+    "pct_increase": 84.1
+  }
+]

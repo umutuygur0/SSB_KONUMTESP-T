@@ -1,0 +1,50 @@
+[
+  {
+    "flight": "vuelo_100",
+    "ref_lat_deg": 39.2991898,
+    "ref_lon_deg": -0.6149754000000001,
+    "ref_alt_m": 164.30139,
+    "n_steps": 110,
+    "flight_dur_s": 218.0,
+    "final_HPE_m": 196.0,
+    "final_alt_err_m": 51.3,
+    "gru_final_lat": 39.2999763,
+    "gru_final_lon": -0.6121939,
+    "gru_final_alt_m": 167.94,
+    "true_final_lat": 39.2983932,
+    "true_final_lon": -0.6131957,
+    "true_final_alt_m": 219.24
+  },
+  {
+    "flight": "vuelo_105",
+    "ref_lat_deg": 39.2991898,
+    "ref_lon_deg": -0.6149754000000001,
+    "ref_alt_m": 164.30139,
+    "n_steps": 109,
+    "flight_dur_s": 216.0,
+    "final_HPE_m": 171.62,
+    "final_alt_err_m": 61.06,
+    "gru_final_lat": 39.2999039,
+    "gru_final_lon": -0.6134583,
+    "gru_final_alt_m": 159.13,
+    "true_final_lat": 39.2983894,
+    "true_final_lon": -0.6130735,
+    "true_final_alt_m": 220.19
+  },
+  {
+    "flight": "vuelo_110",
+    "ref_lat_deg": 39.2991848,
+    "ref_lon_deg": -0.6149795,
+    "ref_alt_m": 158.05812,
+    "n_steps": 109,
+    "flight_dur_s": 216.0,
+    "final_HPE_m": 136.03,
+    "final_alt_err_m": 63.26,
+    "gru_final_lat": 39.2991295,
+    "gru_final_lon": -0.6142778,
+    "gru_final_alt_m": 151.7,
+    "true_final_lat": 39.2984238,
+    "true_final_lon": -0.6129865,
+    "true_final_alt_m": 214.96
+  }
+]

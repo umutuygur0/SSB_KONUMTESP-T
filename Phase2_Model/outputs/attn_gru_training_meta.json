@@ -1,0 +1,19 @@
+{
+  "model": "AttentionGRU",
+  "best_val_loss": 0.21058485470712185,
+  "best_epoch": 73,
+  "total_epochs": 88,
+  "training_time_s": 22.4,
+  "n_params": 154116,
+  "device": "cuda",
+  "hyperparams": {
+    "hidden_size": 128,
+    "num_layers": 2,
+    "dropout": 0.2,
+    "batch_size": 256,
+    "lr_init": 0.001,
+    "huber_delta": 1.0,
+    "patience_es": 15,
+    "attention": "additive (Linear 128\u21921, softmax over T=40)"
+  }
+}

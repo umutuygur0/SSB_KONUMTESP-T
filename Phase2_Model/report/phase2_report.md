@@ -10,13 +10,16 @@
 
 Bu rapor, UAV'ın GPS sinyali olmaksızın IMU / manyetometre / baro / airspeed
 sensörlerini kullanarak anlık NED konum değişimini (ΔNorth, ΔEast, ΔUp) tahmin
-etmek amacıyla eğitilen **GRU** ve **LSTM** modellerinin sonuçlarını içermektedir.
+etmek amacıyla eğitilen **GRU**, **LSTM**, **AttentionGRU** ve **CNN** modellerinin
+sonuçlarını içermektedir.
 
-| Model | HPE Ortalama | HPE Medyan | HPE P95 | 3DE Ort. | RMSE 3D |
-|-------|-------------|-----------|--------|---------|--------|
-| GRU  | 4.124 m | 1.549 m | 15.320 m | 4.166 m | 3.800 m |
-| LSTM | 4.261 m | 1.602 m | 15.874 m | 4.306 m | 3.911 m |
-| Dead Reckoning | 8.551 m | 8.418 m | 10.595 m | 8.574 m | 5.017 m |
+| Model | HPE Ortalama | HPE Medyan | HPE P95 | RMSE 3D |
+|-------|-------------|-----------|--------|--------|
+| **GRU** | **4.124 m** | **1.549 m** | 15.320 m | **3.800 m** |
+| LSTM | 4.387 m | 1.678 m | 15.875 m | 3.979 m |
+| AttentionGRU | 5.230 m | 2.159 m | 15.829 m | 4.441 m |
+| CNN (Dilated) | 5.375 m | 3.912 m | **13.838 m** | 3.974 m |
+| Dead Reckoning | 8.551 m | 8.418 m | 10.595 m | 5.017 m |
 
 ---
 
@@ -87,7 +90,37 @@ Toplam parametre: 205,187
 > **Not:** BiLSTM kullanılmamıştır — gerçek zamanlı inference (gelecek veriye erişim yok)
   gerektirdiğinden tek yönlü yapı seçilmiştir.
 
-### 3.3 Hiperparametreler
+### 3.3 AttentionGRU (Karşılaştırma Modeli)
+
+```
+Input  : (batch, 40, 12)
+GRU    : hidden_size=128, num_layers=2, dropout=0.2
+Dropout: 0.2
+Attn   : Linear(128→1) + Softmax(T=40) → ağırlıklı toplam (1, H)
+Linear : 128 → 3
+Toplam parametre: 154,116
+```
+
+Tüm 40 timestep çıktısı üzerinde öğrenilebilir ağırlıklı ortalama.
+GRU'nun kapı mekanizması kısa pencerelerde zaten örtük dikkat sağladığından
+açık dikkat katmanı bu pencere uzunluğunda avantaj sağlamamaktadır.
+
+### 3.4 1D Dilated CNN (Karşılaştırma Modeli)
+
+```
+Input  : (batch, 40, 12)
+Conv1D : 12→64,  kernel=3, dilation=1 → ReLU → Dropout(0.2)
+Conv1D : 64→128, kernel=3, dilation=2 → ReLU → Dropout(0.2)
+Conv1D : 128→128,kernel=3, dilation=4 → ReLU → Dropout(0.2)
+GlobalAvgPool → Linear(128→3)
+Toplam parametre: 76,739   (en küçük model)
+Etkin alıcı alan: ~15 / 40 timestep
+```
+
+CNN'in p95 değeri (13.838m) en düşük — uç hataları kırpmada avantaj.
+Ancak ortalama HPE GRU'dan yüksek; alıcı alan uzun menzilli bağlam için yetersiz.
+
+### 3.5 Hiperparametreler
 
 | Parametre | Değer |
 |-----------|-------|
@@ -120,13 +153,13 @@ uçuşta makul sonuç üretir. Manevralarda hata hızla büyür.
 
 ## 5. Eğitim Sonuçları
 
-| Parametre | GRU | LSTM |
-|-----------|-----|------|
-| Best val loss | 0.17886 | 0.16795 |
-| Best epoch | 70 | 51 |
-| Toplam epoch | 85 | 66 |
-| Eğitim süresi | 12.9 s | 12.4 s |
-| Cihaz | cuda | cuda |
+| Parametre | GRU | LSTM | AttentionGRU | CNN |
+|-----------|-----|------|-------------|-----|
+| Best val loss | **0.17886** | 0.18522 | 0.21058 | 0.61117 |
+| Best epoch | 70 | 48 | 73 | 83 |
+| Toplam epoch | 85 | 63 | 88 | 98 |
+| Parametre sayısı | 153,987 | 205,187 | 154,116 | 76,739 |
+| Cihaz | cuda | cuda | cuda | cuda |
 
 **Loss grafikleri:**
 
@@ -134,27 +167,30 @@ uçuşta makul sonuç üretir. Manevralarda hata hızla büyür.
 |-----|------|
 | ![GRU Loss](../outputs/plots/gru_training_loss.png) | ![LSTM Loss](../outputs/plots/lstm_training_loss.png) |
 
+| AttentionGRU | CNN |
+|-------------|-----|
+| ![AttGRU Loss](../outputs/plots/attn_gru_training_loss.png) | ![CNN Loss](../outputs/plots/cnn_training_loss.png) |
+
 ---
 
 ## 6. Test Seti Değerlendirmesi
 
 ### 6.1 Tüm Metrikler
 
-| Metrik | GRU | LSTM | Dead Reckoning |
-|--------|-----|------|----------------|
-| HPE Ortalama (m) | 4.124 | 4.261 | 8.551 |
-| HPE Medyan (m)   | 1.549 | 1.602 | 8.418 |
-| HPE P95 (m)      | 15.320 | 15.874 | 10.595 |
-| 3DE Ortalama (m) | 4.166 | 4.306 | 8.574 |
-| 3DE Medyan (m)   | 1.589 | 1.650 | 8.448 |
-| RMSE North (m)   | 3.614 | 4.150 | 5.281 |
-| RMSE East (m)    | 5.488 | 5.339 | 6.873 |
-| RMSE Up (m)      | 0.366 | 0.404 | 0.614 |
-| RMSE 3D (m)      | 3.800 | 3.911 | 5.017 |
-| MAE North (m)    | 2.043 | 2.359 | 4.216 |
-| MAE East (m)     | 3.157 | 3.095 | 6.350 |
-| MAE Up (m)       | 0.283 | 0.306 | 0.470 |
-| Test örnekleri   | 2470 | 2470 | 2470 |
+| Metrik | GRU | LSTM | AttGRU | CNN | Dead Reck. |
+|--------|-----|------|--------|-----|-----------|
+| HPE Ort. (m)   | **4.124** | 4.387 | 5.230 | 5.375 | 8.551 |
+| HPE Medyan (m) | **1.549** | 1.678 | 2.159 | 3.912 | 8.418 |
+| HPE P95 (m)    | 15.320 | 15.875 | 15.829 | **13.838** | 10.595 |
+| 3DE Ort. (m)   | **4.166** | 4.434 | — | — | 8.574 |
+| RMSE North (m) | **3.614** | 4.123 | — | — | 5.281 |
+| RMSE East (m)  | 5.488 | 5.505 | — | — | 6.873 |
+| RMSE Up (m)    | **0.366** | 0.426 | — | — | 0.614 |
+| RMSE 3D (m)    | **3.800** | 3.979 | 4.441 | 3.974 | 5.017 |
+| MAE North (m)  | **2.043** | 2.357 | — | — | 4.216 |
+| MAE East (m)   | 3.157 | 3.248 | — | — | 6.350 |
+| MAE Up (m)     | **0.283** | 0.324 | — | — | 0.470 |
+| Test örnekleri | 2470 | 2470 | 2470 | 2470 | 2470 |
 
 ### 6.2 HPE Kutu Grafiği
 
@@ -197,7 +233,7 @@ uçuşta makul sonuç üretir. Manevralarda hata hızla büyür.
 ### 8.1 Model Karşılaştırması
 
 - **GRU**, HPE ortalaması (4.124 m) ile
-  LSTM'ye (4.261 m) göre daha düşük yatay hata üretmiştir.
+  LSTM'ye (4.387 m) göre daha düşük yatay hata üretmiştir.
 - Her iki model de Dead Reckoning baseline'ı (8.551 m)
   belirgin biçimde geride bırakmıştır.
 - Dead Reckoning tutum bilgisi (attitude) hesaplamadığından manevralar sırasında
@@ -213,18 +249,21 @@ uçuşta makul sonuç üretir. Manevralarda hata hızla büyür.
 
 | Dosya | Açıklama |
 |-------|----------|
-| `outputs/best_gru.pt` | En iyi GRU model ağırlıkları |
-| `outputs/best_lstm.pt` | En iyi LSTM model ağırlıkları |
+| `outputs/best_gru.pt` | GRU ağırlıkları (val=0.1789) |
+| `outputs/best_lstm.pt` | LSTM ağırlıkları (val=0.1852) |
+| `outputs/best_attn_gru.pt` | AttentionGRU ağırlıkları (val=0.2106) |
+| `outputs/best_cnn.pt` | CNN ağırlıkları (val=0.6112) |
 | `outputs/metrics_gru.json` | GRU test metrikleri |
 | `outputs/metrics_lstm.json` | LSTM test metrikleri |
-| `outputs/metrics_baseline.json` | Dead Reckoning metrikleri |
-| `outputs/outage_results.json` | GPS kesinti deneyi sonuçları |
+| `outputs/metrics_attn_gru.json` | AttentionGRU test metrikleri |
+| `outputs/metrics_cnn.json` | CNN test metrikleri |
+| `outputs/sensor_ablation.json` | Sensör ablasyon sonuçları |
 | `outputs/plots/gru_training_loss.png` | GRU eğitim eğrisi |
 | `outputs/plots/lstm_training_loss.png` | LSTM eğitim eğrisi |
+| `outputs/plots/attn_gru_training_loss.png` | AttentionGRU eğitim eğrisi |
+| `outputs/plots/cnn_training_loss.png` | CNN eğitim eğrisi |
+| `outputs/plots/sensor_ablation_hpe.png` | Ablasyon bar grafiği |
 | `outputs/plots/hpe_comparison_boxplot.png` | Model HPE karşılaştırması |
-| `outputs/plots/sample_trajectory_2d.png` | Örnek uçuş rotası |
-| `outputs/plots/hpe_vs_outage_time.png` | HPE vs kesinti süresi |
-| `outputs/plots/gps_outage_duration_vs_hpe.png` | Kesinti süresi bar grafiği |
 
 ---
 
